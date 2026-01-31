@@ -31,7 +31,7 @@ SELECT name, bmi
 FROM user
 ORDER BY bmi DESC
 LIMIT 1 OFFSET 1;
-
+```
 ## Use Case
 - Find users with the highest or lowest BMI
 - Rank data based on multiple criteria
