@@ -1,48 +1,49 @@
-SQL BMI Case Study (SQLBolt Lesson 3)
+# SQL BMI Case Study (SQLBolt Lesson 3)
 
-This repository contains a simple SQL practice project based on SQLBolt – Lesson 3: Sorting Query Results, using a health dataset to analyze Body Mass Index (BMI).
+This repository contains a SQL practice project based on **SQLBolt – Lesson 3: Queries with Sorting & Limiting Results**, using a simple **BMI (Body Mass Index)** dataset.
 
-Description
+## Description
+This project focuses on retrieving and organizing data using `ORDER BY`, `LIMIT`, and `OFFSET`.  
+The dataset includes user BMI and age data, which are sorted to find highest values, rankings, and specific positions in ordered results.
 
-This project demonstrates how to sort and prioritize query results using SQL clauses such as ORDER BY, ASC, DESC, LIMIT, and OFFSET.
-The data includes height, weight, age, gender, and calculated BMI, which are used to identify ranked and priority BMI records.
+## Key Concepts (Lesson 3)
+- `ORDER BY` for sorting query results
+- Sorting with `ASC` and `DESC`
+- Multi-column sorting (`ORDER BY column1, column2`)
+- `LIMIT` to restrict number of rows returned
+- `OFFSET` to skip rows in sorted results
 
-Key Concepts (Lesson 3)
+## Example Queries
+```sql
+-- Get user with highest BMI
+SELECT name, bmi
+FROM user
+ORDER BY bmi DESC
+LIMIT 1;
 
-ORDER BY for sorting query results
+-- Sort by BMI (highest first), then by age (youngest first)
+SELECT name, bmi, age
+FROM user
+ORDER BY bmi DESC, age ASC;
 
-ASC and DESC for ascending and descending order
+-- Get the second highest BMI
+SELECT name, bmi
+FROM user
+ORDER BY bmi DESC
+LIMIT 1 OFFSET 1;
 
-LIMIT to restrict the number of returned rows
+## Use Case
+- Find users with the highest or lowest BMI
+- Rank data based on multiple criteria
+- Retrieve top-N or specific ranked records
 
-OFFSET to skip specific rows
+## Tools
+- SQL
+- SQLite
+- Visual Studio Code (SQLite Extension)
 
-Sorting using multiple columns
+## File
+- `bmi_lesson3.sql` – contains all Lesson 3 queries and examples
 
-Features
-
-Create and manage a SQLite table
-
-Calculate BMI using SQL formula
-
-Sort BMI data (highest to lowest, lowest to highest)
-
-Retrieve top and ranked BMI records
-
-Combine filtering and sorting for analysis
-
-Tools
-
-SQL
-
-SQLite
-
-Visual Studio Code (SQLite Extension)
-
-File
-
-bmi3_analysis.sql – contains all SQL queries and case studies related to Lesson 3
-
-Author
-
+## Author
 Zona Diatri
